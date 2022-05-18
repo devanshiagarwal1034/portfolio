@@ -1,0 +1,110 @@
+ body
+        {
+            background:white;
+        }
+
+        section
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* min-height: 600px; */
+            padding: 100px 20vw;
+         
+
+
+
+        }
+
+        .purple  {
+            background: #800080;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffe2e7, #800080);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc0cb, #800080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        .custom-shape-divider-bottom-1652793321 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1652793321 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 275px;
+}
+
+.custom-shape-divider-bottom-1652793321 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.custom-shape-divider-top-1652793621 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1652793621 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 263px;
+}
+
+.custom-shape-divider-top-1652793621 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.custom-shape-divider-top1-1652793621 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top1-1652793621 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 263px;
+}
+
+.custom-shape-divider-top1-1652793621 .shape-fill {
+    fill: #800080;
+}
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('./layered-waves-haikei.svg');
+}
+
+
+
+
+.btn-style 
+{
+  border:2px solid #800080 ;
+}
+
+.btn-style:hover{
+    background-color: #800080;
+    color: white;
+}
+

@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto+Serif:wght@100&display=swap');
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+  
+}
+
+
+section
+{
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
+ background: #800080;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffe2e7, #800080);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffc0cb, #800080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+.custom-shape-divider-bottom-1652778860 {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+overflow: hidden;
+line-height: 0;
+}
+
+.custom-shape-divider-bottom-1652778860 svg {
+position: relative;
+display: block;
+width: calc(100% + 1.3px);
+height: 124px;
+transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1652778860 .shape-fill {
+fill:  white /* fallback for old browsers */
+
+
+}
+
+.spacer {
+aspect-ratio: 960/300;
+width: 100%;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+}
+
+.layer1 {
+background-image: url('./layered-waves-haikei.svg');
+}
+
+
+
+.textlanding {
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+ 
+}
+
+element.style {
+    height: 100%;
+}
+
+
+.nav-link {
+    color:black;
+}
+
+
+/*code to change background color*/
+.active  a {
+    color:rgba(17,100,102,1);
+    border-bottom: 3px solid rgba(17,100,102,1);
+}
+
+.nav-item>a:hover {
+    background-color: white;
+    color:rgba(17,100,102,1);
+    border-bottom: 3px solid rgba(17,100,102,1);
+   
+
+}
+
+.nav-pills .nav-link.active {
+    background-color: white !important;
+    color:rgba(17,100,102,1) !important; 
+    border-bottom: 3px solid rgba(17,100,102,1)  ;
+}
+
+img.img-fluid {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+ 
+  
+  @media screen and (max-width: 1000px) {
+    img.img-fluid {
+        max-width: 50%;
+        max-height: 70%;
+    }
+  }
+  .navbar-toggler:focus, .navbar-toggler:hover {
+    background-color: #ddd;
+}
+.navbar-toggler {
+    border-color: #ddd;
+}
+.navbar-toggler:focus {
+    outline: 0;
+}
+
+#Contacts
+{
+  background: rgb(2,0,36);
+   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,100,102,1) 60%,  #85D8CE 100%);
+}
+
+
+#About 
+{
+    font-family: Verdana;
+
+
+background: #800080;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffc0cb, #800080);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffc0cb, #800080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+
+    
+}
+
+
+
+
+
+.btn-grad {background-image: linear-gradient(to right, #085078 0%, #85D8CE  51%, #085078  100%)}
+.btn-grad {
+   
+  
+   
+  
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+  
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+
+ .btn-style 
+ {
+   border:2px solid rgba(17,100,102,1) ;
+ }
+
+ .btn-style:hover{
+     background-color: rgba(17,100,102,1) ;
+     color: white;
+ }
