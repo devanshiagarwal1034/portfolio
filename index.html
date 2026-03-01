@@ -432,7 +432,7 @@
     .highlight-text span { font-size: 0.8rem; color: var(--text-muted); }
 
     /* SKILLS */
-    #skills { max-width: 1200px; margin: 0 auto; }
+    #skills { }
 
     .skills-grid {
       display: grid;
@@ -713,15 +713,15 @@
     .achievement-text { font-size: 0.9rem; color: var(--text); line-height: 1.6; }
 
     /* CONTACT */
-    #contact { text-align: center; }
+    #contact { }
 
-    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-inner { max-width: 600px; }
 
     .contact-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.8; }
 
     .contact-links {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 1.2rem;
       flex-wrap: wrap;
       margin-bottom: 2rem;
@@ -844,27 +844,6 @@
       </div>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-number">6.5+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Cloud Certifications</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">50%</div>
-        <div class="stat-label">Load Time Reduced</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">70%</div>
-        <div class="stat-label">Efficiency Gained</div>
-      </div>
-    </div>
 
     <div class="scroll-hint">Scroll</div>
   </section>
@@ -1078,8 +1057,8 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
-      <div class="section-header reveal" style="text-align:center;">
-        <div class="section-label" style="justify-content:center;">06 — Contact</div>
+      <div class="section-header reveal">
+        <div class="section-label">06 — Contact</div>
         <h2 class="section-title">Let's Connect</h2>
       </div>
       <p class="contact-desc reveal">I'm always open to discussing data engineering challenges, exciting new opportunities, or collaboration on interesting projects. Feel free to reach out!</p>
@@ -1097,7 +1076,7 @@
           Email Me
         </a>
       </div>
-      <p class="contact-email reveal"><a href="mailto:devanshiagarwal1034@gmail.com">devanshiagarwal1034@gmail.com</a></p>
+      <p class="contact-email reveal"><a href="/cdn-cgi/l/email-protection#0e6a6b786f607d66676f696f7c796f623f3e3d3a4e69636f6762206d6163"><span class="__cf_email__" data-cfemail="5b3f3e2d3a352833323a3c3a292c3a376a6b686f1b3c363a323775383436">[email&#160;protected]</span></a></p>
     </div>
   </section>
 
@@ -1105,7 +1084,7 @@
     Crafted with ♥ &nbsp;·&nbsp; <span>Devanshi Agarwal</span> &nbsp;·&nbsp; Associate Staff Engineer @ Nagarro
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Theme toggle
     const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
@@ -1157,7 +1136,7 @@
     // Navbar shadow on scroll
     window.addEventListener('scroll', () => {
       document.querySelector('nav').style.boxShadow =
-        window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
+        window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
     });
   </script>
 
