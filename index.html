@@ -793,6 +793,82 @@
       .exp-item::after, .exp-dot { display: none; }
       .exp-meta { text-align: left; }
     }
+
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: var(--navy-mid);
+        border-bottom: 1px solid var(--navy-border);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.5rem;
+        z-index: 999;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1rem; }
+    }
+
+    /* ACTIVE NAV */
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 42px;
+      height: 42px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      z-index: 500;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
   </style>
 </head>
 <body>
@@ -811,6 +887,7 @@
       <li><a href="#certifications">Certs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
   </nav>
 
@@ -1067,7 +1144,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
-        <a class="contact-link" href="mailto:devanshiagarwal1034@gmail.com">
+        <a class="contact-link" href="/cdn-cgi/l/email-protection#ec88899a8d829f84858d8b8d9e9b8d80dddcdfd8ac8b818d8580c28f8381">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           Email Me
         </a>
@@ -1083,59 +1160,108 @@
     Crafted with ♥ &nbsp;·&nbsp; <span>Devanshi Agarwal</span> &nbsp;·&nbsp; Associate Staff Engineer @ Nagarro
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Theme toggle
-    const toggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    const saved = localStorage.getItem('theme') || 'dark';
-    if (saved === 'light') { html.setAttribute('data-theme', 'light'); toggle.textContent = '☀️'; }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
 
-    toggle.addEventListener('click', () => {
-      const isLight = html.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        html.removeAttribute('data-theme');
-        toggle.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-      } else {
+      // Theme toggle
+      const toggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      const saved = localStorage.getItem('theme') || 'dark';
+      if (saved === 'light' && toggle) {
         html.setAttribute('data-theme', 'light');
         toggle.textContent = '☀️';
-        localStorage.setItem('theme', 'light');
       }
-    });
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const isLight = html.getAttribute('data-theme') === 'light';
+          if (isLight) {
+            html.removeAttribute('data-theme');
+            toggle.textContent = '🌙';
+            localStorage.setItem('theme', 'dark');
+          } else {
+            html.setAttribute('data-theme', 'light');
+            toggle.textContent = '☀️';
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      }
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+      // Scroll reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
+      reveals.forEach(el => observer.observe(el));
+
+      // Make already-visible elements show immediately
+      setTimeout(() => {
+        reveals.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) el.classList.add('visible');
+        });
+      }, 100);
+
+      // Stagger card animations
+      document.querySelectorAll('.skills-grid, .projects-grid, .certs-grid, .achievements-list').forEach(grid => {
+        grid.querySelectorAll('.reveal').forEach((child, i) => {
+          child.style.transitionDelay = `${i * 0.08}s`;
+        });
       });
-    }, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
-    reveals.forEach(el => observer.observe(el));
 
-    // Make already-visible elements show immediately
-    setTimeout(() => {
-      reveals.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          el.classList.add('visible');
-        }
-      });
-    }, 100);
+      // Hamburger menu
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('open');
+          navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            navLinks.classList.remove('open');
+          });
+        });
+      }
 
-    // Stagger card animations
-    document.querySelectorAll('.skills-grid, .projects-grid, .certs-grid, .achievements-list').forEach(grid => {
-      grid.querySelectorAll('.reveal').forEach((child, i) => {
-        child.style.transitionDelay = `${i * 0.08}s`;
-      });
-    });
+      // Active nav on scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navAnchors = document.querySelectorAll('.nav-links a');
+      const activateNav = () => {
+        let current = '';
+        sections.forEach(sec => {
+          if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+        });
+        navAnchors.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+        });
+      };
+      window.addEventListener('scroll', activateNav);
+      activateNav();
 
-    // Navbar shadow on scroll
-    window.addEventListener('scroll', () => {
-      document.querySelector('nav').style.boxShadow =
-        window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
+      // Back to top
+      const backToTop = document.getElementById('backToTop');
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          backToTop.classList.toggle('visible', window.scrollY > 400);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+
+      // Navbar shadow on scroll
+      const nav = document.querySelector('nav');
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
+        });
+      }
+
     });
   </script>
 
